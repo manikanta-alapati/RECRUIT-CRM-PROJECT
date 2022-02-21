@@ -1,0 +1,3 @@
+
+create table company (company_id integer primary key autoincrement, user_mail varchar(100) , name varchar(50) not null, website text, phone_number varchar(10) not null, city varchar(50), state varchar(50), country varchar(50), industry text check(industry in ('Account', 'IT', 'Sales', 'Health Care')) not null default 'Account', foreign key(user_mail) references users(email));
+create table users (email varchar(100) primary key, name varchar(50) not null, password text not null);
